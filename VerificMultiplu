@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+long long v[105];
+int main()
+{
+  int n;
+  cin>> n;
+  for(int i=0;i<n;i++) {
+    cin>> v[i];
+  }
+  long long ultimul = v[n-1];
+  if(ultimul!=0){
+    for(int i=0;i<n;i++) {
+      if(v[i]%ultimul!=0) {
+        cout<< "NU";
+        return 0;
+      }
+    }
+  } else{
+    for(int i=0;i<n;i++){
+      if(v[i]!=0){
+        cout<<"NU";
+        return 0;
+      }
+    }
+  }
+  cout<< "DA";
+  return 0;
+}
